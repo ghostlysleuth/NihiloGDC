@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxy2xociogn7g"]
+
+[ext_resource type="Script" path="res://cube.gd" id="1_1g2j4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_wrdth"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_awt8x"]
+albedo_color = Color(0.937255, 0.223529, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_agolj"]
+
+[node name="cube" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.579944, 0)
+script = ExtResource( "1_1g2j4" )
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+mesh = SubResource( "SphereMesh_wrdth" )
+surface_material_override/0 = SubResource( "StandardMaterial3D_awt8x" )
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource( "SphereShape3D_agolj" )

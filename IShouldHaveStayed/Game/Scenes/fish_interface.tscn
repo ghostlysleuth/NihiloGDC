@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce7b4b50b2sgs"]
+
+[ext_resource type="Script" path="res://Game/Scripts/fish_interface.gd" id="1_60k17"]
+[ext_resource type="Script" path="res://Game/Scripts/FishData.gd" id="1_yqtum"]
+
+[node name="fish_interface" type="CharacterBody3D"]
+script = ExtResource( "1_60k17" )
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+
+[node name="FishData" type="Node" parent="."]
+script = ExtResource( "1_yqtum" )

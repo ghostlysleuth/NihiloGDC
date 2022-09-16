@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyvln4jv11eda"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rqawb"]
+
+[node name="Main" type="Node3D"]
+
+[node name="floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource( "WorldBoundaryShape3D_rqawb" )
+
+[node name="Camera3d" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4.11469, 0)
+current = true
