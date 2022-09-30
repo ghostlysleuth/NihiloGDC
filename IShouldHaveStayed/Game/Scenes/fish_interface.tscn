@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce7b4b50b2sgs"]
+[gd_scene load_steps=5 format=3 uid="uid://ce7b4b50b2sgs"]
 
 [ext_resource type="Script" path="res://Game/Scripts/fish_interface.gd" id="1_60k17"]
 [ext_resource type="Script" path="res://Game/Scripts/FishData.gd" id="1_yqtum"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ylma"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3k8lk"]
+
 [node name="fish_interface" type="CharacterBody3D"]
-script = ExtResource( "1_60k17" )
+script = ExtResource("1_60k17")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0ylma")
 
 [node name="FishData" type="Node" parent="."]
-script = ExtResource( "1_yqtum" )
+script = ExtResource("1_yqtum")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_3k8lk")
