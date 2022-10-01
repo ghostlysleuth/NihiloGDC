@@ -5,33 +5,27 @@ class_name Fish
 
 @onready var fishData: Node = $FishData
 
-const SPEED:float = 5.0
-const JUMP_VELOCITY = 4.5
+signal caught(fishType)
+
+var current:Vector3 = Vector3.FORWARD
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _process(delta):
-	pass
+    pass
 
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
+    velocity.x = move_toward(velocity.x, current.x, delta)
+    velocity.y = move_toward(velocity.y, current.y, delta)
+    velocity.z = move_toward(velocity.z, current.z, delta)
+    
+    move_and_slide()
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	move_and_slide()
+func _on_hitbox_area_entered(area):
+    emit_signal("caught", self)
+    queue_free()
+    
