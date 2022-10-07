@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmaqvesfqo3yk"]
+[gd_scene load_steps=7 format=3 uid="uid://bmaqvesfqo3yk"]
 
 [ext_resource type="PackedScene" uid="uid://cxy2xociogn7g" path="res://cube.tscn" id="1_giw74"]
+[ext_resource type="PackedScene" uid="uid://btbm75xqtg1nc" path="res://player.tscn" id="2_jkwbp"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j6eic"]
 
@@ -13,8 +14,8 @@ size = Vector3(1, 2.80617, 2.53371)
 
 [node name="Node3d" type="Node3D"]
 
-[node name="cube" parent="." instance=ExtResource( "1_giw74" )]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.54199, 0)
+[node name="cube" parent="." instance=ExtResource("1_giw74")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144.864, 3.54199, 0)
 
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.267387, 44.7309, 46.3576)
@@ -26,24 +27,27 @@ size = 10.0
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="StaticBody3d"]
 transform = Transform3D(7.19922, 0, 0, 0, 1, 0, 0, 0, 9.13065, 0, 0, 0)
-mesh = SubResource( "PlaneMesh_j6eic" )
+mesh = SubResource("PlaneMesh_j6eic")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
-shape = SubResource( "WorldBoundaryShape3D_win1e" )
+shape = SubResource("WorldBoundaryShape3D_win1e")
 
 [node name="wall" type="StaticBody3D" parent="."]
 transform = Transform3D(0.0660649, 0, 0.997815, 0, 1, 0, -0.997815, 0, 0.0660649, -3.15734, 1.30351, 5.41195)
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="wall"]
 transform = Transform3D(1.49276, 0, 0, 0, 2.81343, 0, 0, 0, 9.20041, 0, 0, 0)
-mesh = SubResource( "BoxMesh_ueade" )
+mesh = SubResource("BoxMesh_ueade")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.65169, 0, 0, 0)
-shape = SubResource( "BoxShape3D_jirnm" )
+shape = SubResource("BoxShape3D_jirnm")
 
 [node name="OmniLight3d" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.633232, 0.773962, 0, -0.773962, 0.633232, 0, 7.65302, 0)
 shadow_enabled = true
+
+[node name="player" parent="." instance=ExtResource("2_jkwbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76573, 0.705509, 0)
