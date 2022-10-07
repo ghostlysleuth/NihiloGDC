@@ -7,7 +7,7 @@ class_name Fish
 
 signal caught(fishType)
 
-var current:Vector3 = Vector3.FORWARD
+var current:Vector3 = Vector3.BACK 
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

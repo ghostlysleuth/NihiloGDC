@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmaqvesfqo3yk"]
+[gd_scene load_steps=8 format=3 uid="uid://bmaqvesfqo3yk"]
 
 [ext_resource type="PackedScene" uid="uid://cxy2xociogn7g" path="res://cube.tscn" id="1_giw74"]
 [ext_resource type="PackedScene" uid="uid://btbm75xqtg1nc" path="res://player.tscn" id="2_jkwbp"]
+[ext_resource type="PackedScene" uid="uid://ce7b4b50b2sgs" path="res://Game/Scenes/fish_interface.tscn" id="2_td2bk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_j6eic"]
 
@@ -22,6 +23,9 @@ transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 
 projection = 1
 current = true
 size = 10.0
+
+[node name="fish_interface" parent="." instance=ExtResource("2_td2bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43593, 0)
 
 [node name="StaticBody3d" type="StaticBody3D" parent="."]
 
@@ -46,7 +50,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.65169, 0, 0, 0)
 shape = SubResource("BoxShape3D_jirnm")
 
 [node name="OmniLight3d" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.693968, 0.720006, 0, -0.720006, -0.693968, 0, 7.65302, 0)
+transform = Transform3D(0.94798, 0.262916, -0.17947, 0, 0.563785, 0.825922, 0.318331, -0.782957, 0.534457, -2.59716, 7.65302, 5.48566)
 light_energy = 2.0
 shadow_enabled = true
 
