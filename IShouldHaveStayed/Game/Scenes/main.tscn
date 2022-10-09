@@ -1,15 +1,138 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyvln4jv11eda"]
+[gd_scene load_steps=7 format=3 uid="uid://dyvln4jv11eda"]
+
+[ext_resource type="PackedScene" uid="uid://bsxd5eucwu1wl" path="res://Game/Scenes/enviroment objs/wall_A_a.tscn" id="1_ui7aw"]
+[ext_resource type="PackedScene" uid="uid://bfa3ecm86ifow" path="res://Game/Scenes/enviroment objs/wall_basic_A.tscn" id="2_b6m2i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e3v28"]
+size = Vector3(0.031992, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tqxjm"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rqawb"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r5jef"]
+
 [node name="Main" type="Node3D"]
 
-[node name="floor" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3d" type="CollisionShape3D" parent="floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
-shape = SubResource( "WorldBoundaryShape3D_rqawb" )
-
 [node name="Camera3d" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 4.11469, 0)
+transform = Transform3D(1, 0, 0, 0, 0.760757, 0.649036, 0, -0.649036, 0.760757, 0, 12.1426, 10.9173)
 current = true
+
+[node name="walkway" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.51323)
+
+[node name="decore" type="Node3D" parent="walkway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="walkway" type="StaticBody3D" parent="walkway"]
+transform = Transform3D(30, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 4)
+
+[node name="Collider - floor" type="CollisionShape3D" parent="walkway/walkway"]
+shape = SubResource("BoxShape3D_e3v28")
+
+[node name="Collider - left" type="CollisionShape3D" parent="walkway/walkway"]
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 1, 0.497889, 0.949605, 0)
+shape = SubResource("BoxShape3D_e3v28")
+disabled = true
+
+[node name="Collider - right" type="CollisionShape3D" parent="walkway/walkway"]
+transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 1, -0.50211, 0.949605, 0)
+shape = SubResource("BoxShape3D_e3v28")
+disabled = true
+
+[node name="railing" type="Node3D" parent="walkway/walkway"]
+transform = Transform3D(0.0503693, 0, 0, 0, 2, 0, 0, 0, 0.2, 0, 2.77408, -0.470833)
+
+[node name="railing - front" type="StaticBody3D" parent="walkway/walkway/railing"]
+transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 0.1, 0, -0.995816, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="walkway/walkway/railing/railing - front"]
+shape = SubResource("BoxShape3D_e3v28")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/walkway/railing/railing - front"]
+mesh = SubResource("BoxMesh_tqxjm")
+
+[node name="railing - back" type="StaticBody3D" parent="walkway/walkway/railing"]
+transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 0.1, 0, -0.995816, 5)
+
+[node name="Collider" type="CollisionShape3D" parent="walkway/walkway/railing/railing - back"]
+shape = SubResource("BoxShape3D_e3v28")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/walkway/railing/railing - back"]
+mesh = SubResource("BoxMesh_tqxjm")
+
+[node name="plankA" type="Node3D" parent="walkway/walkway"]
+
+[node name="river" type="Node3D" parent="."]
+
+[node name="water" type="StaticBody3D" parent="river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.63997, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="river/water"]
+shape = SubResource("WorldBoundaryShape3D_rqawb")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="river/water"]
+
+[node name="river bed" type="StaticBody3D" parent="river"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.51432, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="river/river bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("WorldBoundaryShape3D_rqawb")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="river/river bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.874348, 0)
+skeleton = NodePath("../../water")
+
+[node name="banks" type="Node3D" parent="river"]
+
+[node name="left" type="Node3D" parent="river/banks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="bounds" type="StaticBody3D" parent="river/banks/left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4698, 0, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="river/banks/left/bounds"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_r5jef")
+
+[node name="walls" type="Node3D" parent="river/banks/left"]
+
+[node name="setA" type="Node3D" parent="river/banks/left/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -10)
+
+[node name="wall_A_a" parent="river/banks/left/walls/setA" instance=ExtResource("1_ui7aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="river/banks/left/walls/setA" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="river/banks/left/walls/setA" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="river/banks/left/walls/setA" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.65089)
+
+[node name="setB" type="Node3D" parent="river/banks/left/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="wall_A2" parent="river/banks/left/walls/setB" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/walls/setB" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setA2" type="Node3D" parent="river/banks/left/walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -20)
+
+[node name="wall_A_a" parent="river/banks/left/walls/setA2" instance=ExtResource("1_ui7aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="river/banks/left/walls/setA2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="river/banks/left/walls/setA2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="river/banks/left/walls/setA2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.3532)
