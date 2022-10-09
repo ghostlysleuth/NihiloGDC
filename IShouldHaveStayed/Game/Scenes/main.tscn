@@ -1,7 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyvln4jv11eda"]
+[gd_scene load_steps=16 format=3 uid="uid://dyvln4jv11eda"]
 
 [ext_resource type="PackedScene" uid="uid://bsxd5eucwu1wl" path="res://Game/Scenes/enviroment objs/wall_A_a.tscn" id="1_ui7aw"]
 [ext_resource type="PackedScene" uid="uid://bfa3ecm86ifow" path="res://Game/Scenes/enviroment objs/wall_basic_A.tscn" id="2_b6m2i"]
+
+[sub_resource type="TextMesh" id="TextMesh_g67yv"]
+text = "Feel free to do what ever u want to the scene, this is just place holder stuff. idea-> left bank industral themed & 'junk' falls into the river from the slots in the walls. right bank is nature themed. cant find a terrain editor in godot"
+font_size = 70
+autowrap_mode = 2
+pixel_size = 0.1
+width = 1000.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_jar5n"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bjobx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4f0l8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e3v28"]
 size = Vector3(0.031992, 1, 1)
@@ -12,7 +25,24 @@ size = Vector3(0.031992, 1, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r5jef"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6a8r"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4bxjd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xme62"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_6oino"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_2pvhm"]
+
 [node name="Main" type="Node3D"]
+
+[node name="note" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.39396, -75.0844, -11.9593)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="note"]
+mesh = SubResource("TextMesh_g67yv")
+skeleton = NodePath("../../refrence place holders")
 
 [node name="Camera3d" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.760757, 0.649036, 0, -0.649036, 0.760757, 0, 12.1426, 10.9173)
@@ -24,11 +54,349 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.51323)
 [node name="decore" type="Node3D" parent="walkway"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 
+[node name="planks" type="Node3D" parent="walkway/decore"]
+
+[node name="setC" type="Node3D" parent="walkway/decore/planks"]
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC2" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC2"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC2/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC2/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC2/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC3" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27194, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC3"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC3/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC3/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC3/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC4" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27194, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC4"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC4/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC4/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC4/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC5" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2719, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC5"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC5/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC5/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC5/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC6" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2719, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC6"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC6/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC6/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC6/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC7" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72806, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC7"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC7/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC7/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC7/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC8" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72806, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC8"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC8/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC8/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC8/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC9" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.098, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC9"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC9/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC9/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC9/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC11" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.098, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC11"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC11/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC11/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC11/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="setC10" type="Node3D" parent="walkway/decore/planks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.098, 0, 0)
+
+[node name="plankB" type="Node3D" parent="walkway/decore/planks/setC10"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC10/plankB"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankC" type="Node3D" parent="walkway/decore/planks/setC10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC10/plankC"]
+transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="plankA" type="Node3D" parent="walkway/decore/planks/setC10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/planks/setC10/plankA"]
+transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_jar5n")
+
+[node name="struts" type="Node3D" parent="walkway/decore"]
+
+[node name="postA" type="Node3D" parent="walkway/decore/struts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.512, -1.43051e-06, -2.4555)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/postA"]
+transform = Transform3D(0.5, 0, 0, 0, 6, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="postA2" type="Node3D" parent="walkway/decore/struts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6833, 4.76837e-07, 2.36858)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/postA2"]
+transform = Transform3D(0.5, 0, 0, 0, 6, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="setD" type="Node3D" parent="walkway/decore/struts"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="postB" type="Node3D" parent="walkway/decore/struts/setD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD/postB"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="postB2" type="Node3D" parent="walkway/decore/struts/setD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD/postB2"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="setD2" type="Node3D" parent="walkway/decore/struts"]
+transform = Transform3D(0.989257, 0, -0.146187, 0, 1, 0, 0.146187, 0, 0.989257, -6, -1.90917, 0)
+
+[node name="postB" type="Node3D" parent="walkway/decore/struts/setD2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD2/postB"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="postB2" type="Node3D" parent="walkway/decore/struts/setD2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD2/postB2"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="setD3" type="Node3D" parent="walkway/decore/struts"]
+transform = Transform3D(0.99825, 0, 0.0591321, -0.00645702, 0.99402, 0.109005, -0.0587785, -0.109197, 0.992281, 6, -1.90917, 0)
+
+[node name="postB" type="Node3D" parent="walkway/decore/struts/setD3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD3/postB"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="postB2" type="Node3D" parent="walkway/decore/struts/setD3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD3/postB2"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="setD4" type="Node3D" parent="walkway/decore/struts"]
+transform = Transform3D(0.99825, -8.77593e-12, 0.0591322, -0.00144679, 0.999701, 0.0244243, -0.0591145, -0.0244671, 0.997952, 14, -1.70502, 0.0169916)
+
+[node name="postB" type="Node3D" parent="walkway/decore/struts/setD4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD4/postB"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
+[node name="postB2" type="Node3D" parent="walkway/decore/struts/setD4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/decore/struts/setD4/postB2"]
+transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_bjobx")
+
 [node name="walkway" type="StaticBody3D" parent="walkway"]
 transform = Transform3D(30, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 4)
 
 [node name="Collider - floor" type="CollisionShape3D" parent="walkway/walkway"]
-shape = SubResource("BoxShape3D_e3v28")
+shape = SubResource("BoxShape3D_4f0l8")
 
 [node name="Collider - left" type="CollisionShape3D" parent="walkway/walkway"]
 transform = Transform3D(0.2, 0, 0, 0, 1, 0, 0, 0, 1, 0.497889, 0.949605, 0)
@@ -50,6 +418,7 @@ transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 0.1, 0, -0.995816, 0)
 shape = SubResource("BoxShape3D_e3v28")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/walkway/railing/railing - front"]
+visible = false
 mesh = SubResource("BoxMesh_tqxjm")
 
 [node name="railing - back" type="StaticBody3D" parent="walkway/walkway/railing"]
@@ -59,9 +428,8 @@ transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 0.1, 0, -0.995816, 5)
 shape = SubResource("BoxShape3D_e3v28")
 
 [node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/walkway/railing/railing - back"]
+visible = false
 mesh = SubResource("BoxMesh_tqxjm")
-
-[node name="plankA" type="Node3D" parent="walkway/walkway"]
 
 [node name="river" type="Node3D" parent="."]
 
@@ -80,8 +448,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.51432, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 shape = SubResource("WorldBoundaryShape3D_rqawb")
 
-[node name="MeshInstance3d" type="MeshInstance3D" parent="river/river bed"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.874348, 0)
+[node name="water texture or something" type="MeshInstance3D" parent="river/river bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157337, 1.01582, -0.0494576)
 skeleton = NodePath("../../water")
 
 [node name="banks" type="Node3D" parent="river"]
@@ -96,43 +464,606 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4698, 0, 0)
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_r5jef")
 
-[node name="walls" type="Node3D" parent="river/banks/left"]
+[node name="visual bounds - front" type="Node3D" parent="river/banks/left"]
 
-[node name="setA" type="Node3D" parent="river/banks/left/walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -10)
+[node name="setA" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -30)
 
-[node name="wall_A_a" parent="river/banks/left/walls/setA" instance=ExtResource("1_ui7aw")]
+[node name="wall_A_a" parent="river/banks/left/visual bounds - front/setA" instance=ExtResource("1_ui7aw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
 
-[node name="wall_A" parent="river/banks/left/walls/setA" instance=ExtResource("2_b6m2i")]
+[node name="wall_A" parent="river/banks/left/visual bounds - front/setA" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
 
-[node name="wall_A2" parent="river/banks/left/walls/setA" instance=ExtResource("2_b6m2i")]
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setA" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
 
-[node name="wall_A3" parent="river/banks/left/walls/setA" instance=ExtResource("2_b6m2i")]
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setA" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.65089)
 
-[node name="setB" type="Node3D" parent="river/banks/left/walls"]
+[node name="setB" type="Node3D" parent="river/banks/left/visual bounds - front"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
 
-[node name="wall_A2" parent="river/banks/left/walls/setB" instance=ExtResource("2_b6m2i")]
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setB" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
-[node name="wall_A3" parent="river/banks/left/walls/setB" instance=ExtResource("2_b6m2i")]
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setB" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="setA2" type="Node3D" parent="river/banks/left/walls"]
+[node name="setB6" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.9662, 5, 5.38816)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setB6" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A4" parent="river/banks/left/visual bounds - front/setB6" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0, 7)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setB6" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB2" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setB2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setB2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setA2" type="Node3D" parent="river/banks/left/visual bounds - front"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -20)
 
-[node name="wall_A_a" parent="river/banks/left/walls/setA2" instance=ExtResource("1_ui7aw")]
+[node name="wall_A_a" parent="river/banks/left/visual bounds - front/setA2" instance=ExtResource("1_ui7aw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
 
-[node name="wall_A" parent="river/banks/left/walls/setA2" instance=ExtResource("2_b6m2i")]
+[node name="wall_A" parent="river/banks/left/visual bounds - front/setA2" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
 
-[node name="wall_A2" parent="river/banks/left/walls/setA2" instance=ExtResource("2_b6m2i")]
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setA2" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
 
-[node name="wall_A3" parent="river/banks/left/walls/setA2" instance=ExtResource("2_b6m2i")]
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setA2" instance=ExtResource("2_b6m2i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.3532)
+
+[node name="lengthA" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -15, 4, -15)
+
+[node name="setB7" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA2" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9, -15)
+
+[node name="setB7" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA3" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2/setB8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46)
+
+[node name="setB7" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="river/banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/lengthA2/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/lengthA2/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB3" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -39)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setB3" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setB3" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB4" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 9, -45)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setB4" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setB4" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB5" type="Node3D" parent="river/banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, -45)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - front/setB5" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - front/setB5" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="visual bounds - back" type="Node3D" parent="river/banks/left"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, 8.74228e-08, -1, 7.64274e-15, 8.74228e-08, 0, -1, 0, 8, 15)
+
+[node name="setA" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -30)
+
+[node name="wall_A_a" parent="river/banks/left/visual bounds - back/setA" instance=ExtResource("1_ui7aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="river/banks/left/visual bounds - back/setA" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setA" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setA" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.65089)
+
+[node name="setB" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setB" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setB" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB6" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.9662, 5, 5.38816)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setB6" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A4" parent="river/banks/left/visual bounds - back/setB6" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0, 7)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setB6" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB2" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setB2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setB2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setA2" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -20)
+
+[node name="wall_A_a" parent="river/banks/left/visual bounds - back/setA2" instance=ExtResource("1_ui7aw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="river/banks/left/visual bounds - back/setA2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setA2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setA2" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.3532)
+
+[node name="lengthA" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -15, 4, -15)
+
+[node name="setB7" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA2" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9, -15)
+
+[node name="setB7" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA3" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2/setB8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46)
+
+[node name="setB7" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB9" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="river/banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/lengthA2/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/lengthA2/setB10" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB3" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -39)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setB3" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setB3" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB4" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 9, -45)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setB4" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setB4" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB5" type="Node3D" parent="river/banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, -45)
+
+[node name="wall_A2" parent="river/banks/left/visual bounds - back/setB5" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="river/banks/left/visual bounds - back/setB5" instance=ExtResource("2_b6m2i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="right" type="Node3D" parent="river/banks"]
+
+[node name="terrain" type="Node3D" parent="river/banks/right"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="river/banks/right/terrain"]
+transform = Transform3D(20, 0, 0, 0, 50, 0, 0, 0, 50, 36.1731, 0, -4.33711)
+mesh = SubResource("PlaneMesh_k6a8r")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="river/banks/right/terrain"]
+transform = Transform3D(-2.62268e-07, -1, 0, 6, -4.37114e-08, 0, 0, 0, 50, 16.1731, -6, -4.33711)
+mesh = SubResource("PlaneMesh_k6a8r")
+
+[node name="refrence place holders" type="Node3D" parent="."]
+
+[node name="fish" type="Node3D" parent="refrence place holders"]
+
+[node name="very cool fish" type="Node3D" parent="refrence place holders/fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03153, -3.45415, -29.1604)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="very cool fish2" type="Node3D" parent="refrence place holders/fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4922, -3.45415, -20.6938)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish2"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="very cool fish3" type="Node3D" parent="refrence place holders/fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74305, -3.45415, -12.0215)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish3"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="very cool fish4" type="Node3D" parent="refrence place holders/fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10194, -3.45415, -3.19758)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish4"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="very cool fish5" type="Node3D" parent="refrence place holders/fish"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91803, -3.45415, -36.6957)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
