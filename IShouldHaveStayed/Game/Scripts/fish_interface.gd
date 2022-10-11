@@ -14,18 +14,18 @@ var current:Vector3 = Vector3.BACK
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _process(delta):
-    pass
+	pass
 
 func _physics_process(delta):
-    velocity.x = move_toward(velocity.x, current.x, delta)
-    velocity.y = move_toward(velocity.y, current.y, delta)
-    velocity.z = move_toward(velocity.z, current.z, delta)
-    
-    move_and_slide()
+	velocity.x = move_toward(velocity.x, current.x, delta)
+	velocity.y = move_toward(velocity.y, current.y, delta)
+	velocity.z = move_toward(velocity.z, current.z, delta)
+	
+	move_and_slide()
 
 
 
 func _on_hitbox_area_entered(area):
-    emit_signal("caught", self)
-    queue_free()
-    
+	emit_signal("caught", self)
+	queue_free()
+	

@@ -25,7 +25,7 @@ current = true
 size = 10.0
 
 [node name="fish_interface" parent="." instance=ExtResource("2_td2bk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.43593, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56177, 1.2163, -3.02989)
 
 [node name="StaticBody3d" type="StaticBody3D" parent="."]
 
@@ -56,3 +56,18 @@ shadow_enabled = true
 
 [node name="player" parent="." instance=ExtResource("2_jkwbp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76573, 0.705509, 0)
+
+[node name="fish_interface2" parent="." instance=ExtResource("2_td2bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56177, 1.2163, -5.26019)
+
+[node name="fish_interface3" parent="." instance=ExtResource("2_td2bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62879, 1.2163, -6.2435)
+
+[node name="fish_interface4" parent="." instance=ExtResource("2_td2bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62879, 1.2163, -7.75269)
+
+[node name="fish_interface5" parent="." instance=ExtResource("2_td2bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08493, 1.2163, -6.2435)
+
+[node name="fish_interface6" parent="." instance=ExtResource("2_td2bk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16464, 1.2163, -9.53453)
