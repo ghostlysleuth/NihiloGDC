@@ -15,6 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
     velocity = current*fishData.SPEED
+    add_to_group("fish")
 
 func _process(delta):
     pass
