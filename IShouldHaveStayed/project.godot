@@ -21,14 +21,14 @@ _global_script_class_icons={
 [application]
 
 config/name="IShouldHaveStayed"
-run/main_scene="res://testWorld.tscn"
+run/main_scene="res://Game/Scenes/main.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=480
-window/size/viewport_height=270
+window/size/viewport_width=960
+window/size/viewport_height=540
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="viewport"

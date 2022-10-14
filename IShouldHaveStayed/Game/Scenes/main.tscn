@@ -1,7 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://dyvln4jv11eda"]
+[gd_scene load_steps=20 format=3 uid="uid://dyvln4jv11eda"]
 
+[ext_resource type="Script" path="res://Game/Scenes/Game.gd" id="1_2meow"]
 [ext_resource type="PackedScene" uid="uid://bsxd5eucwu1wl" path="res://Game/Scenes/enviroment objs/wall_A_a.tscn" id="1_ui7aw"]
 [ext_resource type="PackedScene" uid="uid://bfa3ecm86ifow" path="res://Game/Scenes/enviroment objs/wall_basic_A.tscn" id="2_b6m2i"]
+[ext_resource type="PackedScene" uid="uid://btbm75xqtg1nc" path="res://player.tscn" id="3_anjao"]
+[ext_resource type="PackedScene" uid="uid://ce7b4b50b2sgs" path="res://Game/Scenes/fish_interface.tscn" id="4_7kv7c"]
+[ext_resource type="PackedScene" uid="uid://damxxfhxmtny" path="res://Game/Scenes/Spawner.tscn" id="5_faq1c"]
 
 [sub_resource type="TextMesh" id="TextMesh_g67yv"]
 text = "Feel free to do what ever u want to the scene, this is just place holder stuff. idea-> left bank industral themed & 'junk' falls into the river from the slots in the walls. right bank is nature themed. cant find a terrain editor in godot"
@@ -36,6 +40,7 @@ size = Vector3(0.031992, 1, 1)
 [sub_resource type="PrismMesh" id="PrismMesh_2pvhm"]
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_2meow")
 
 [node name="note" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.39396, -75.0844, -11.9593)
@@ -44,8 +49,13 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 6.3939
 mesh = SubResource("TextMesh_g67yv")
 skeleton = NodePath("../../refrence place holders")
 
+[node name="OmniLight3d" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.94798, 0.262916, -0.17947, 0.155456, 0.109632, 0.98174, 0.277791, -0.95857, 0.0630572, -2.59716, 20.5679, 11.967)
+light_energy = 2.0
+shadow_enabled = true
+
 [node name="Camera3d" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.760757, 0.649036, 0, -0.649036, 0.760757, 0, 12.1426, 10.9173)
+transform = Transform3D(1, 0, 0, 0, 0.87265, 0.488347, 0, -0.488347, 0.87265, 0, 8.32798, 10.9173)
 current = true
 
 [node name="walkway" type="Node3D" parent="."]
@@ -458,7 +468,9 @@ skeleton = NodePath("../../water")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="bounds" type="StaticBody3D" parent="river/banks/left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4698, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9636, 0, 0)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="river/banks/left/bounds"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
@@ -889,6 +901,15 @@ mesh = SubResource("PlaneMesh_k6a8r")
 transform = Transform3D(-2.62268e-07, -1, 0, 6, -4.37114e-08, 0, 0, 0, 50, 16.1731, -6, -4.33711)
 mesh = SubResource("PlaneMesh_k6a8r")
 
+[node name="bounds" type="StaticBody3D" parent="river/banks/right"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.2568, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="river/banks/right/bounds"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_r5jef")
+
 [node name="refrence place holders" type="Node3D" parent="."]
 
 [node name="fish" type="Node3D" parent="refrence place holders"]
@@ -1067,3 +1088,36 @@ mesh = SubResource("PrismMesh_2pvhm")
 [node name="MeshInstance3d5" type="MeshInstance3D" parent="refrence place holders/fish/very cool fish5"]
 transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
 mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="player" parent="." instance=ExtResource("3_anjao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42649, -1.63997, 1.57134)
+
+[node name="fish_interface" parent="." instance=ExtResource("4_7kv7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.98053, -1.63997, -30.8759)
+
+[node name="fish_interface2" parent="." instance=ExtResource("4_7kv7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.93585, -1.63997, -37.8241)
+
+[node name="fish_interface3" parent="." instance=ExtResource("4_7kv7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.97424, -1.63997, -14.6634)
+
+[node name="fish_interface4" parent="." instance=ExtResource("4_7kv7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.8109, -1.63997, -6.51688)
+
+[node name="fish_interface5" parent="." instance=ExtResource("4_7kv7c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0721, -1.63997, -5.64225)
+
+[node name="StaticBody3d" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
+
+[node name="Spawner" parent="." instance=ExtResource("5_faq1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64226, -1.63997, -88.7546)
+range = Vector3(20, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "HEALTH"

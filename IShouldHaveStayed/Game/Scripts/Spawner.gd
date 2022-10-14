@@ -22,7 +22,7 @@ extends Node3D
 
 
 #paths to fish resource
-const toSpawn = ['cube.tscn'] #full path would be "res://assets/prefab/Box.tscn"
+const toSpawn = ["Game/Scenes/fish_interface.tscn"] #full path would be "res://assets/prefab/Box.tscn"
 
 #time
 var spawnTime_min : float = 2;
@@ -43,7 +43,7 @@ var enabled:bool:
 var _stopImmediately : bool = false;
 
 func _ready():
-    range = $range.position - position #child node for easy visualization, couldnt find anything built in
+    #range = $range.position - position #child node for easy visualization, couldnt find anything built in
     
     for i in range(0, toSpawn.size()):
         toSpawn[i] =  'res://' + toSpawn[i]
