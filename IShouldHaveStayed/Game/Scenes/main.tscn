@@ -1120,4 +1120,10 @@ range = Vector3(20, 0, 0)
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
-text = "HEALTH"
+text = "Score : 0"
+
+[connection signal="caught" from="fish_interface" to="." method=" fishGotCaught"]
+[connection signal="caught" from="fish_interface2" to="." method="fishGotCaught"]
+[connection signal="caught" from="fish_interface3" to="." method="fishGotCaught"]
+[connection signal="caught" from="fish_interface4" to="." method="fishGotCaught"]
+[connection signal="caught" from="fish_interface5" to="." method="fishGotCaught"]
