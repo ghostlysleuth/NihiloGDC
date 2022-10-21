@@ -4,3 +4,4 @@ extends Node
 
 @export var WEIGHT:int
 
+@export var DAMAGE:int

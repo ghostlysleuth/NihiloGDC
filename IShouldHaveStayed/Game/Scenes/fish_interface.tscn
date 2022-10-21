@@ -16,6 +16,7 @@ script = ExtResource("1_60k17")
 script = ExtResource("1_yqtum")
 SPEED = 7
 WEIGHT = 1
+DAMAGE = 0
 
 [node name="Hitbox" type="Area3D" parent="."]
 

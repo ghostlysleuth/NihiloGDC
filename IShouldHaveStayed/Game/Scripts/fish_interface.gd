@@ -14,18 +14,18 @@ var current:Vector3 = Vector3.BACK
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
-	velocity = current*fishData.SPEED
-	add_to_group("fish")
+    velocity = current*fishData.SPEED
+    add_to_group("fish")
 
 func _process(delta):
-	pass
+    pass
 
 func _physics_process(delta):
-	move_and_slide()
+    move_and_slide()
 
 
 
 func _on_hitbox_area_entered(area):
-	emit_signal("caught", fishData)
-	queue_free()
-	
+    emit_signal("caught", fishData)
+    queue_free()
+    
