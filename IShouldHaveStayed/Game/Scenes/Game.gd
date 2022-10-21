@@ -1,5 +1,6 @@
 extends Node3D
 
+var lives := 3
 var score := 0
 var wallPhase := 0 #Keeps track of what phase the player is on
 
@@ -13,8 +14,12 @@ func _process(delta):
     pass
 
 func fishGotCaught(fishType):
+    print("DAMAGE: " + str(fishType.DAMAGE))
     score += fishType.WEIGHT
-    $CanvasLayer/Label.text = "Score: " + str(score)
+    $CanvasLayer/ScoreLabel.text = "Score: " + str(score)
+    if (fishType.DAMAGE >= 1):
+        lives -= fishType.DAMAGE
+        $CanvasLayer/LifeLabel.text = "Lives: " + str(lives)
     if ((score >= 1) && (wallPhase == 0)):
         wallPhase = 1
         $river/banks/left/bounds.move()

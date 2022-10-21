@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dyvln4jv11eda"]
+[gd_scene load_steps=23 format=3 uid="uid://dyvln4jv11eda"]
 
 [ext_resource type="Script" path="res://Game/Scenes/Game.gd" id="1_2meow"]
 [ext_resource type="PackedScene" uid="uid://bsxd5eucwu1wl" path="res://Game/Scenes/enviroment objs/wall_A_a.tscn" id="1_ui7aw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ce7b4b50b2sgs" path="res://Game/Scenes/fish_interface.tscn" id="4_7kv7c"]
 [ext_resource type="PackedScene" uid="uid://damxxfhxmtny" path="res://Game/Scenes/Spawner.tscn" id="5_faq1c"]
 [ext_resource type="Script" path="res://Game/Scenes/rightBounds.gd" id="5_yon0y"]
+[ext_resource type="PackedScene" uid="uid://b6lt0fbtsrca6" path="res://Game/Scenes/eel.tscn" id="8_1eo18"]
 
 [sub_resource type="TextMesh" id="TextMesh_g67yv"]
 text = "Feel free to do what ever u want to the scene, this is just place holder stuff. idea-> left bank industral themed & 'junk' falls into the river from the slots in the walls. right bank is nature themed. cant find a terrain editor in godot"
@@ -1111,6 +1112,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.36996, -1.63997, -12.6942)
 [node name="fish_interface5" parent="." instance=ExtResource("4_7kv7c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0721, -1.63997, -5.64225)
 
+[node name="OnePounder" parent="." instance=ExtResource("8_1eo18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.30121, -1.13073, -6.93866)
+
 [node name="StaticBody3d" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
@@ -1121,13 +1125,22 @@ range = Vector3(20, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score : 0"
+
+[node name="LifeLabel" type="Label" parent="CanvasLayer"]
+offset_left = 896.0
+offset_right = 953.0
+offset_bottom = 26.0
+text = "Lives: 3"
 
 [connection signal="caught" from="fish_interface" to="." method=" fishGotCaught"]
 [connection signal="caught" from="fish_interface2" to="." method="fishGotCaught"]
 [connection signal="caught" from="fish_interface3" to="." method="fishGotCaught"]
 [connection signal="caught" from="fish_interface4" to="." method="fishGotCaught"]
 [connection signal="caught" from="fish_interface5" to="." method="fishGotCaught"]
+[connection signal="caught" from="OnePounder" to="." method="fishGotCaught"]
+
+[editable path="OnePounder"]
