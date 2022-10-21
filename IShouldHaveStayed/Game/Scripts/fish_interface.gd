@@ -23,8 +23,6 @@ func _process(delta):
 func _physics_process(delta):
     move_and_slide()
 
-
-
 func _on_hitbox_area_entered(area):
     emit_signal("caught", fishData)
     queue_free()

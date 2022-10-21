@@ -1,4 +1,4 @@
-extends Node3D
+extends RigidBody3D
 
 #cant find a way for multi line comments
 #var summary = """a
@@ -44,7 +44,7 @@ var _stopImmediately : bool = false;
 
 func _ready():
     #range = $range.position - position #child node for easy visualization, couldnt find anything built in
-    
+    print("hello")
     for i in range(0, toSpawn.size()):
         toSpawn[i] =  'res://' + toSpawn[i]
     print(enabled)
