@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2s67fh0kqvgy"]
+
+[ext_resource type="PackedScene" uid="uid://ce7b4b50b2sgs" path="res://Game/Scenes/fish_interface.tscn" id="1_psmeq"]
+
+[node name="OnePounder" instance=ExtResource("1_psmeq")]
