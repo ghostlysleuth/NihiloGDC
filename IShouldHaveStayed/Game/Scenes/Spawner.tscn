@@ -15,6 +15,8 @@ collision_layer = 2
 collision_mask = 2
 physics_material_override = SubResource("PhysicsMaterial_ogrpu")
 gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
 script = ExtResource("1_hrp03")
 
 [node name="range" type="Node3D" parent="."]
