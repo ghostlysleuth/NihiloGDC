@@ -23,7 +23,15 @@ DAMAGE = 0
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox"]
 shape = SubResource("BoxShape3D_1dqct")
 
+[node name="DespawnHitbox" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DespawnHitbox"]
+shape = SubResource("BoxShape3D_1dqct")
+
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_qyw0w")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="DespawnHitbox" to="." method="_on_despawn_hitbox_area_entered"]

@@ -26,4 +26,6 @@ func _physics_process(delta):
 func _on_hitbox_area_entered(area):
     emit_signal("caught", fishData)
     queue_free()
-    
+
+func _on_despawn_hitbox_area_entered(area):
+    queue_free()
