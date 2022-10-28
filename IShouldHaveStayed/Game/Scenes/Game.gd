@@ -29,3 +29,4 @@ func fishGotCaught(fishType):
 func createFish(fish):
     fish.position = $Spawner.position
     call_deferred("add_child", fish)
+    fish.caught.connect(fishGotCaught)
