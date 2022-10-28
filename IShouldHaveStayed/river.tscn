@@ -1,0 +1,483 @@
+[gd_scene load_steps=8 format=3 uid="uid://n7jfj411n6tc"]
+
+[ext_resource type="Script" path="res://Game/Scenes/leftBounds.gd" id="1_ng0l7"]
+[ext_resource type="PackedScene" uid="uid://bsxd5eucwu1wl" path="res://Game/Scenes/enviroment objs/wall_A_a.tscn" id="2_mtq55"]
+[ext_resource type="PackedScene" uid="uid://bfa3ecm86ifow" path="res://Game/Scenes/enviroment objs/wall_basic_A.tscn" id="3_t1jyu"]
+[ext_resource type="Script" path="res://Game/Scenes/rightBounds.gd" id="4_4ky5t"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rqawb"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r5jef"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k6a8r"]
+
+[node name="river" type="Node3D"]
+
+[node name="water" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.63997, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="water"]
+shape = SubResource("WorldBoundaryShape3D_rqawb")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="water"]
+
+[node name="river bed" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.51432, 0)
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="river bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+shape = SubResource("WorldBoundaryShape3D_rqawb")
+
+[node name="water texture or something" type="MeshInstance3D" parent="river bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0157337, 1.01582, -0.0494576)
+skeleton = NodePath("../../water")
+
+[node name="banks" type="Node3D" parent="."]
+
+[node name="left" type="Node3D" parent="banks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+
+[node name="bounds" type="StaticBody3D" parent="banks/left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9636, 0, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ng0l7")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="banks/left/bounds"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_r5jef")
+
+[node name="visual bounds - front" type="Node3D" parent="banks/left"]
+
+[node name="setA" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -30)
+
+[node name="wall_A_a" parent="banks/left/visual bounds - front/setA" instance=ExtResource("2_mtq55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="banks/left/visual bounds - front/setA" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setA" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setA" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.65089)
+
+[node name="setB" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setB" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setB" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB6" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.9662, 5, 5.38816)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setB6" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A4" parent="banks/left/visual bounds - front/setB6" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0, 7)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setB6" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB2" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setB2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setB2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setA2" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -20)
+
+[node name="wall_A_a" parent="banks/left/visual bounds - front/setA2" instance=ExtResource("2_mtq55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="banks/left/visual bounds - front/setA2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setA2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setA2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.3532)
+
+[node name="lengthA" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -15, 4, -15)
+
+[node name="setB7" type="Node3D" parent="banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="banks/left/visual bounds - front/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA2" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9, -15)
+
+[node name="setB7" type="Node3D" parent="banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA3" type="Node3D" parent="banks/left/visual bounds - front/lengthA2/setB8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46)
+
+[node name="setB7" type="Node3D" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="banks/left/visual bounds - front/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/lengthA2/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/lengthA2/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB3" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -39)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setB3" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setB3" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB4" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 9, -45)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setB4" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setB4" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB5" type="Node3D" parent="banks/left/visual bounds - front"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, -45)
+
+[node name="wall_A2" parent="banks/left/visual bounds - front/setB5" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - front/setB5" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="visual bounds - back" type="Node3D" parent="banks/left"]
+transform = Transform3D(1, 8.74228e-08, 8.74228e-08, 8.74228e-08, -1, 7.64274e-15, 8.74228e-08, 0, -1, 0, 8, 15)
+
+[node name="setA" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -30)
+
+[node name="wall_A_a" parent="banks/left/visual bounds - back/setA" instance=ExtResource("2_mtq55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="banks/left/visual bounds - back/setA" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setA" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setA" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.65089)
+
+[node name="setB" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 1)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setB" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setB" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB6" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.9662, 5, 5.38816)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setB6" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A4" parent="banks/left/visual bounds - back/setB6" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0, 7)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setB6" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB2" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -9)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setB2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setB2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setA2" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -20)
+
+[node name="wall_A_a" parent="banks/left/visual bounds - back/setA2" instance=ExtResource("2_mtq55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+
+[node name="wall_A" parent="banks/left/visual bounds - back/setA2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setA2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, 0.646797)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setA2" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.65279, 0, -4.3532)
+
+[node name="lengthA" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -15, 4, -15)
+
+[node name="setB7" type="Node3D" parent="banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="banks/left/visual bounds - back/lengthA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA2" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 9, -15)
+
+[node name="setB7" type="Node3D" parent="banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="lengthA3" type="Node3D" parent="banks/left/visual bounds - back/lengthA2/setB8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -46)
+
+[node name="setB7" type="Node3D" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB7" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB8" type="Node3D" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB8" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB8/lengthA3/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB9" type="Node3D" parent="banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB9" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB10" type="Node3D" parent="banks/left/visual bounds - back/lengthA2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/lengthA2/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/lengthA2/setB10" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB3" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -39)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setB3" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setB3" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB4" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 9, -45)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setB4" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setB4" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="setB5" type="Node3D" parent="banks/left/visual bounds - back"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, -45)
+
+[node name="wall_A2" parent="banks/left/visual bounds - back/setB5" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="wall_A3" parent="banks/left/visual bounds - back/setB5" instance=ExtResource("3_t1jyu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="right" type="Node3D" parent="banks"]
+
+[node name="terrain" type="Node3D" parent="banks/right"]
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="banks/right/terrain"]
+transform = Transform3D(20, 0, 0, 0, 50, 0, 0, 0, 50, 36.1731, 0, -4.33711)
+mesh = SubResource("PlaneMesh_k6a8r")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="banks/right/terrain"]
+transform = Transform3D(-2.62268e-07, -1, 0, 6, -4.37114e-08, 0, 0, 0, 50, 16.1731, -6, -4.33711)
+mesh = SubResource("PlaneMesh_k6a8r")
+
+[node name="bounds" type="StaticBody3D" parent="banks/right"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.2568, 0, 0)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_4ky5t")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="banks/right/bounds"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_r5jef")

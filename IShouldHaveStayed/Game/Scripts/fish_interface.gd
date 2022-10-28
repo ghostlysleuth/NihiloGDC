@@ -18,6 +18,7 @@ func _ready():
     add_to_group("fish")
 
 func _process(delta):
+    print(velocity)
     pass
 
 func _physics_process(delta):

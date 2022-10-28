@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=3 uid="uid://7jfw0wrtibe8"]
+
+[ext_resource type="PackedScene" uid="uid://cog5xfgjg3ytr" path="res://placeholder_fish_model.tscn" id="1_njy6c"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4bxjd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_xme62"]
+
+[sub_resource type="TorusMesh" id="TorusMesh_6oino"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_2pvhm"]
+
+[node name="fish" type="Node3D"]
+
+[node name="very cool fish" parent="." instance=ExtResource("1_njy6c")]
+
+[node name="very cool fish2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4922, -3.45415, -20.6938)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="very cool fish2"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="very cool fish3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74305, -3.45415, -12.0215)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="very cool fish3"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="very cool fish4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10194, -3.45415, -3.19758)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="very cool fish4"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="very cool fish5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91803, -3.45415, -36.6957)
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_4bxjd")
+
+[node name="MeshInstance3d6" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d7" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
+mesh = SubResource("SphereMesh_xme62")
+
+[node name="MeshInstance3d8" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
+mesh = SubResource("TorusMesh_6oino")
+
+[node name="MeshInstance3d2" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d4" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d3" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
+mesh = SubResource("PrismMesh_2pvhm")
+
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="very cool fish5"]
+transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
+mesh = SubResource("PrismMesh_2pvhm")

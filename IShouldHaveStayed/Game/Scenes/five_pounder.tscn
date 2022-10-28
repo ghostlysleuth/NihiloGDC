@@ -5,4 +5,5 @@
 [node name="OnePounder" instance=ExtResource("1_psmeq")]
 
 [node name="FishData" parent="." index="1"]
+SPEED = 12
 WEIGHT = 5

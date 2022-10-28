@@ -23,12 +23,12 @@ extends RigidBody3D
 signal spawn_fish(fish)
 
 #paths to fish resource
-const toSpawn = ["Game/Scenes/fish_interface.tscn"] #full path would be "res://assets/prefab/Box.tscn"
+const toSpawn = ["Game/Scenes/one_pounder.tscn"] #full path would be "res://assets/prefab/Box.tscn"
 const SPEED := 5
 
 #time
-var spawnTime_min : float = 2;
-var spawnTime_max : float = 5;
+var spawnTime_min : float = 0.5;
+var spawnTime_max : float = 1;
 
 #position
 @export var range : Vector3
