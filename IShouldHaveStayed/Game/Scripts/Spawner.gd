@@ -56,8 +56,9 @@ func _ready():
     
     if enabled:
         startSpawning(-1)
-        
-    
+
+func spawnFish(fish):
+    emit_signal("spawn_fish", fish)
 
 func startSpawning(initialDelay : float):
     _stopImmediately = false;
@@ -72,10 +73,7 @@ func startSpawning(initialDelay : float):
         await get_tree().create_timer(delay).timeout
         if _stopImmediately: return
         var obj = load(toSpawn[rando.randi_range(0, toSpawn.size()-1)])
-        var actualObject = obj.instantiate() 
-        
-        #call_deferred("add_child", actualObject)
-        emit_signal("spawn_fish", actualObject)
+        spawnFish(obj)
         #actualObject do stuff
 
 func stopSpawning(stopImmediately : bool):

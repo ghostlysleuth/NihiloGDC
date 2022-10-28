@@ -27,6 +27,7 @@ func fishGotCaught(fishType):
 
 
 func createFish(fish):
-    fish.position = $Spawner.position
-    call_deferred("add_child", fish)
-    fish.caught.connect(fishGotCaught)
+    var realFish = fish.instantiate()
+    realFish.position = $Spawner.position
+    call_deferred("add_child", realFish)
+    realFish.caught.connect(fishGotCaught)
