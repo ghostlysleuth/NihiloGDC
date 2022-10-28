@@ -20,9 +20,11 @@ extends RigidBody3D
 #"""
 #GDScript ide sucks. what do you mean I have to learn 100+ unlisted & hidden functions that the script inhearates to do anyhting
 
+signal spawn_fish(fish)
 
 #paths to fish resource
 const toSpawn = ["Game/Scenes/fish_interface.tscn"] #full path would be "res://assets/prefab/Box.tscn"
+const SPEED := 5
 
 #time
 var spawnTime_min : float = 2;
@@ -43,6 +45,9 @@ var enabled:bool:
 var _stopImmediately : bool = false;
 
 func _ready():
+    #Set velocity so the spawner moves around
+    linear_velocity = Vector3(SPEED, 0, 0)
+    
     #range = $range.position - position #child node for easy visualization, couldnt find anything built in
     print("hello")
     for i in range(0, toSpawn.size()):
@@ -69,7 +74,8 @@ func startSpawning(initialDelay : float):
         var obj = load(toSpawn[rando.randi_range(0, toSpawn.size()-1)])
         var actualObject = obj.instantiate() 
         
-        call_deferred("add_child", actualObject)
+        #call_deferred("add_child", actualObject)
+        emit_signal("spawn_fish", actualObject)
         #actualObject do stuff
 
 func stopSpawning(stopImmediately : bool):

@@ -1142,5 +1142,6 @@ text = "Lives: 3"
 [connection signal="caught" from="fish_interface4" to="." method="fishGotCaught"]
 [connection signal="caught" from="fish_interface5" to="." method="fishGotCaught"]
 [connection signal="caught" from="OnePounder" to="." method="fishGotCaught"]
+[connection signal="spawn_fish" from="Spawner" to="." method="createFish"]
 
 [editable path="OnePounder"]

@@ -24,3 +24,8 @@ func fishGotCaught(fishType):
         wallPhase = 1
         $river/banks/left/bounds.move()
         $river/banks/right/bounds.move()
+
+
+func createFish(fish):
+    fish.position = $Spawner.position
+    call_deferred("add_child", fish)
