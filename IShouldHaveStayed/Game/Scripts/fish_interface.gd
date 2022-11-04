@@ -18,7 +18,7 @@ func _ready():
     add_to_group("fish")
 
 func _process(delta):
-    print(velocity)
+    #print(velocity)
     pass
 
 func _physics_process(delta):
@@ -29,4 +29,5 @@ func _on_hitbox_area_entered(area):
     queue_free()
 
 func _on_despawn_hitbox_area_entered(area):
+    #print("Oops, you missed one")
     queue_free()

@@ -26,3 +26,7 @@ mesh = SubResource("PrismMesh_r1xth")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_s2ynv")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyvln4jv11eda"]
+[gd_scene load_steps=11 format=3 uid="uid://dyvln4jv11eda"]
 
 [ext_resource type="Script" path="res://Game/Scenes/Game.gd" id="1_2meow"]
 [ext_resource type="PackedScene" uid="uid://f3yhyey6hoiq" path="res://walkway.tscn" id="2_sd67o"]
@@ -13,6 +13,12 @@ font_size = 70
 autowrap_mode = 2
 pixel_size = 0.1
 width = 1000.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_yjqqo"]
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8fpna"]
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7v8lg"]
 size = Vector3(50, 1, 1)
@@ -57,12 +63,14 @@ range = Vector3(20, 0, 0)
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Score : 0"
+label_settings = SubResource("LabelSettings_yjqqo")
 
 [node name="LifeLabel" type="Label" parent="CanvasLayer"]
 offset_left = 896.0
 offset_right = 953.0
 offset_bottom = 26.0
 text = "Lives: 3"
+label_settings = SubResource("LabelSettings_8fpna")
 
 [node name="Despawn" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.25275, 11.0642)

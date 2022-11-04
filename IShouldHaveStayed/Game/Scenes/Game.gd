@@ -7,6 +7,7 @@ var wallPhase := 0 #Keeps track of what phase the player is on
 # Called when the node enters the scene tree for the first time.
 func _ready():
     score = 0
+    randomize() #Randomizes game seed
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,7 +15,6 @@ func _process(delta):
     pass
 
 func fishGotCaught(fishType):
-    print("DAMAGE: " + str(fishType.DAMAGE))
     score += fishType.WEIGHT
     $CanvasLayer/ScoreLabel.text = "Score: " + str(score)
     if (fishType.DAMAGE >= 1):
