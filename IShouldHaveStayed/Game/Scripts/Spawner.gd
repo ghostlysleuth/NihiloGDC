@@ -14,6 +14,9 @@ enum Phases
     ALL_ONE_POUNDER,
     ALL_FIVE_POUNDER,
     OOPS_ALL_EELS,
+    NORMAL,
+    RICH_MAN,
+    NORMAL_TWO,
 }
 var currentPhase := Phases.ALL_ONE_POUNDER
 var fishArray := []
@@ -36,8 +39,9 @@ func _ready():
     $SpawnTimer.start(timerTime)
  
 func changePhase():
-    currentPhase = randi_range(0, Phases.size()) 
-    timerTime = randf_range(0.5, 1)
+    currentPhase = randi_range(0, Phases.size() - 1) 
+    timerTime = randf_range(0.5, 1) #Default time
+    print(currentPhase)
     match(currentPhase):
         Phases.ALL_ONE_POUNDER:
             fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, one_pounder]
@@ -46,7 +50,14 @@ func changePhase():
         Phases.OOPS_ALL_EELS:
             fishArray = [eel, eel, eel, eel, eel]
             timerTime = randf_range(0.4, 0.5)
+        Phases.NORMAL:
+            fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, five_pounder]
+        Phases.RICH_MAN:
+            fishArray = [five_pounder, five_pounder, five_pounder, five_pounder, one_pounder]
+        Phases.NORMAL_TWO:
+            fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, one_pounder, eel, five_pounder]
         _:
+            print("Error: Phase ", currentPhase, " not implemented.")
             fishArray.clear() #Failsafe
 
 func _physics_process(delta):
@@ -67,7 +78,7 @@ func spawnFish(fish):
 
 #Spawns random fish from array
 func spawnFishFromArray():
-    spawnFish(fishArray.pop_at(randi_range(0, fishArray.size() - 1))) #Replace with random number
+    spawnFish(fishArray.pop_at(randi_range(0, fishArray.size() - 1)))
 
 func random_vec3(v : Vector3):
     var r = RandomNumberGenerator.new()

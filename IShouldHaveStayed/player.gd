@@ -28,5 +28,5 @@ func _physics_process(delta):
 
 
 func _on_hitbox_area_entered(area):
-    print("Player hitbox entered")
+    print("Player hitbox entered") #Replace with animiation
     
