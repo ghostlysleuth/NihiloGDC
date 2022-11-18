@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://n7jfj411n6tc"]
+[gd_scene load_steps=9 format=3 uid="uid://n7jfj411n6tc"]
 
+[ext_resource type="PackedScene" uid="uid://bjq762cmne23b" path="res://riverBounds.tscn" id="1_3vfr8"]
 [ext_resource type="Script" path="res://Game/Scenes/leftBounds.gd" id="1_ng0l7"]
 [ext_resource type="PackedScene" uid="uid://bsxd5eucwu1wl" path="res://Game/Scenes/enviroment objs/wall_A_a.tscn" id="2_mtq55"]
 [ext_resource type="PackedScene" uid="uid://bfa3ecm86ifow" path="res://Game/Scenes/enviroment objs/wall_basic_A.tscn" id="3_t1jyu"]
@@ -12,6 +13,9 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_k6a8r"]
 
 [node name="river" type="Node3D"]
+
+[node name="RiverBottom2" parent="." instance=ExtResource("1_3vfr8")]
+transform = Transform3D(0.0760578, 0, 0, 0, 0.35694, 0, 0, 0, 1, 0, -47.9288, 0)
 
 [node name="water" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.63997, 0)
@@ -46,6 +50,7 @@ script = ExtResource("1_ng0l7")
 [node name="CollisionShape3d" type="CollisionShape3D" parent="banks/left/bounds"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_r5jef")
+disabled = true
 
 [node name="visual bounds - front" type="Node3D" parent="banks/left"]
 
@@ -481,3 +486,4 @@ script = ExtResource("4_4ky5t")
 [node name="CollisionShape3d" type="CollisionShape3D" parent="banks/right/bounds"]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("WorldBoundaryShape3D_r5jef")
+disabled = true

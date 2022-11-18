@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjq762cmne23b"]
+
+[ext_resource type="Material" uid="uid://brh75fj3pigcw" path="res://blue.tres" id="1_40jyl"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8b5y1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7rb6"]
+albedo_color = Color(0.266667, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mjgve"]
+size = Vector3(1, 1, 13.2792)
+
+[node name="RiverBottom" type="StaticBody3D"]
+transform = Transform3D(0.125645, 0, 0, 0, 0.0924597, 0, 0, 0, 1, 0, -16.8148, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Left2" type="MeshInstance3D" parent="."]
+transform = Transform3D(14.4749, -357.13, 0, 19.1767, 269.567, 0, 0, 0, 167.708, 0, 0, 0)
+mesh = SubResource("BoxMesh_8b5y1")
+surface_material_override/0 = ExtResource("1_40jyl")
+
+[node name="Left3" type="MeshInstance3D" parent="."]
+transform = Transform3D(14.4959, 361.528, 0, -18.7434, 279.602, 0, 0, 0, 167.708, 0, 0, 0)
+mesh = SubResource("BoxMesh_8b5y1")
+surface_material_override/0 = SubResource("StandardMaterial3D_u7rb6")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+transform = Transform3D(20.7357, -282.631, 0, 25.4908, 229.91, 0, 0, 0, 12.7599, 0, -2.7401, 0)
+shape = SubResource("BoxShape3D_mjgve")
+
+[node name="CollisionShape3d2" type="CollisionShape3D" parent="."]
+transform = Transform3D(20.3621, 285.952, 0, -25.7902, 225.766, 0, 0, 0, 12.7599, 0, -2.7401, 0)
+shape = SubResource("BoxShape3D_mjgve")

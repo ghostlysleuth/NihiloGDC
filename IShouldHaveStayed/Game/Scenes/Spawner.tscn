@@ -8,11 +8,12 @@ bounce = 1.0
 
 [sub_resource type="PrismMesh" id="PrismMesh_r1xth"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_s2ynv"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_hnbee"]
 
 [node name="Spawner" type="RigidBody3D"]
 collision_layer = 2
 collision_mask = 2
+axis_lock_linear_y = true
 physics_material_override = SubResource("PhysicsMaterial_ogrpu")
 gravity_scale = 0.0
 linear_damp_mode = 1
@@ -25,7 +26,7 @@ script = ExtResource("1_hrp03")
 mesh = SubResource("PrismMesh_r1xth")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_s2ynv")
+shape = SubResource("BoxShape3D_hnbee")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 
