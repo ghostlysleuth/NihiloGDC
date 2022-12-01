@@ -11,12 +11,12 @@ const five_pounder = preload("res://Game/Scenes/five_pounder.tscn")
 #Phases
 enum Phases 
 {
-    ALL_ONE_POUNDER,
-    ALL_FIVE_POUNDER,
-    OOPS_ALL_EELS,
-    NORMAL,
-    RICH_MAN,
-    NORMAL_TWO,
+	ALL_ONE_POUNDER,
+	ALL_FIVE_POUNDER,
+	OOPS_ALL_EELS,
+	NORMAL,
+	RICH_MAN,
+	NORMAL_TWO,
 }
 var currentPhase := Phases.ALL_ONE_POUNDER
 var fishArray := []
@@ -34,57 +34,57 @@ var spawnTime_max : float = 1;
 @export var rot : Quaternion
 
 func _ready():
-    #Set velocity so the spawner moves around
-    linear_velocity = Vector3(SPEED, 0, 0)
-    $SpawnTimer.start(timerTime)
+	#Set velocity so the spawner moves around
+	linear_velocity = Vector3(SPEED, 0, 0)
+	$SpawnTimer.start(timerTime)
  
 func changePhase():
-    currentPhase = randi_range(0, Phases.size() - 1) 
-    timerTime = randf_range(0.5, 1) #Default time
-    print(currentPhase)
-    match(currentPhase):
-        Phases.ALL_ONE_POUNDER:
-            fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, one_pounder]
-        Phases.ALL_FIVE_POUNDER:
-            fishArray = [five_pounder, five_pounder, five_pounder, five_pounder, five_pounder]
-        Phases.OOPS_ALL_EELS:
-            fishArray = [eel, eel, eel, eel, eel]
-            timerTime = randf_range(0.4, 0.5)
-        Phases.NORMAL:
-            fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, five_pounder]
-        Phases.RICH_MAN:
-            fishArray = [five_pounder, five_pounder, five_pounder, five_pounder, one_pounder]
-        Phases.NORMAL_TWO:
-            fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, one_pounder, eel, five_pounder]
-        _:
-            print("Error: Phase ", currentPhase, " not implemented.")
-            fishArray.clear() #Failsafe
+	currentPhase = randi_range(0, Phases.size() - 1) 
+	timerTime = randf_range(0.5, 1) #Default time
+	print(currentPhase)
+	match(currentPhase):
+		Phases.ALL_ONE_POUNDER:
+			fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, one_pounder]
+		Phases.ALL_FIVE_POUNDER:
+			fishArray = [five_pounder, five_pounder, five_pounder, five_pounder, five_pounder]
+		Phases.OOPS_ALL_EELS:
+			fishArray = [eel, eel, eel, eel, eel]
+			timerTime = randf_range(0.4, 0.5)
+		Phases.NORMAL:
+			fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, five_pounder]
+		Phases.RICH_MAN:
+			fishArray = [five_pounder, five_pounder, five_pounder, five_pounder, one_pounder]
+		Phases.NORMAL_TWO:
+			fishArray = [one_pounder, one_pounder, one_pounder, one_pounder, one_pounder, eel, five_pounder]
+		_:
+			print("Error: Phase ", currentPhase, " not implemented.")
+			fishArray.clear() #Failsafe
 
 func _physics_process(delta):
-    if !timerDone:
-        return
-    else:
-        if (fishArray.size() > 0):
-            spawnFishFromArray()
-        else:
-            changePhase()
-            #spawnFishFromArray() #Uncomment if you don't want the gap
-        $SpawnTimer.start(timerTime)
-        timerDone = false
-    linear_velocity = Vector3(sign(linear_velocity.x) * SPEED, 0, 0)
+	if !timerDone:
+		return
+	else:
+		if (fishArray.size() > 0):
+			spawnFishFromArray()
+		else:
+			changePhase()
+			#spawnFishFromArray() #Uncomment if you don't want the gap
+		$SpawnTimer.start(timerTime)
+		timerDone = false
+	linear_velocity = Vector3(sign(linear_velocity.x) * SPEED, 0, 0)
 
 #fish in this context is a preloaded scene
 func spawnFish(fish):
-    emit_signal("spawn_fish", fish)
+	emit_signal("spawn_fish", fish)
 
 #Spawns random fish from array
 func spawnFishFromArray():
-    spawnFish(fishArray.pop_at(randi_range(0, fishArray.size() - 1)))
+	spawnFish(fishArray.pop_at(randi_range(0, fishArray.size() - 1)))
 
 func random_vec3(v : Vector3):
-    var r = RandomNumberGenerator.new()
-    return Vector3(r.randi_range(0, v.x), r.randi_range(0, v.y), r.randi_range(0, v.z))
+	var r = RandomNumberGenerator.new()
+	return Vector3(r.randi_range(0, v.x), r.randi_range(0, v.y), r.randi_range(0, v.z))
 
 
 func _on_spawn_timer_timeout():
-    timerDone = true
+	timerDone = true
