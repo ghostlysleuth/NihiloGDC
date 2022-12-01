@@ -48,7 +48,7 @@ current = true
 [node name="river" parent="." instance=ExtResource("3_u18g8")]
 
 [node name="player" parent="." instance=ExtResource("3_anjao")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42649, -1.63997, 1.57134)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.426, -11, 1.571)
 
 [node name="River" parent="." instance=ExtResource("5_p3w4f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.4748, 0)
@@ -59,7 +59,7 @@ visible = false
 [node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
 
 [node name="Spawner" parent="." instance=ExtResource("5_faq1c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.64226, -1.63997, -67.0079)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.642, -11, -25.822)
 range = Vector3(20, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -86,6 +86,8 @@ collision_mask = 4
 shape = SubResource("BoxShape3D_7v8lg")
 
 [node name="Water" parent="." instance=ExtResource("6_4l4ek")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -15.6927, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11, 0)
 
 [connection signal="spawn_fish" from="Spawner" to="." method="createFish"]
+[connection signal="water_level_updated" from="Water" to="player" method="waterLevelUpdated"]
+[connection signal="water_level_updated" from="Water" to="Spawner" method="waterLevelUpdated"]

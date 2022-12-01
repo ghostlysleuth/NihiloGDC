@@ -23,10 +23,9 @@ func _physics_process(delta):
     #Move
     move_and_slide()
     
-    
-
-
 
 func _on_hitbox_area_entered(area):
     print("Player hitbox entered") #Replace with animiation
     
+func waterLevelUpdated(waterPosition):
+    position.y = waterPosition
