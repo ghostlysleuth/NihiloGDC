@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://n7jfj411n6tc"]
+[gd_scene load_steps=10 format=3 uid="uid://n7jfj411n6tc"]
 
 [ext_resource type="PackedScene" uid="uid://bjq762cmne23b" path="res://riverBounds.tscn" id="1_3vfr8"]
 [ext_resource type="Script" path="res://Game/Scenes/leftBounds.gd" id="1_ng0l7"]
@@ -11,6 +11,9 @@
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r5jef"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_k6a8r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3o07p"]
+albedo_color = Color(0, 0.58, 0.0386666, 1)
 
 [node name="river" type="Node3D"]
 
@@ -472,10 +475,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="banks/right/terrain"]
 transform = Transform3D(20, 0, 0, 0, 50, 0, 0, 0, 50, 36.1731, 0, -4.33711)
 mesh = SubResource("PlaneMesh_k6a8r")
+surface_material_override/0 = SubResource("StandardMaterial3D_3o07p")
 
 [node name="MeshInstance3d2" type="MeshInstance3D" parent="banks/right/terrain"]
 transform = Transform3D(-2.62268e-07, -1, 0, 6, -4.37114e-08, 0, 0, 0, 50, 16.1731, -6, -4.33711)
 mesh = SubResource("PlaneMesh_k6a8r")
+surface_material_override/0 = SubResource("StandardMaterial3D_3o07p")
 
 [node name="bounds" type="StaticBody3D" parent="banks/right"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.2568, 0, 0)

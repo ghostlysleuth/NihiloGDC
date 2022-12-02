@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6lt0fbtsrca6"]
+[gd_scene load_steps=3 format=3 uid="uid://b6lt0fbtsrca6"]
 
 [ext_resource type="PackedScene" uid="uid://ce7b4b50b2sgs" path="res://Game/Scenes/fish_interface.tscn" id="1_psmeq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbwkp"]
+albedo_color = Color(1, 0, 1, 1)
 
 [node name="OnePounder" instance=ExtResource("1_psmeq")]
 
@@ -8,3 +11,6 @@
 SPEED = 12
 WEIGHT = 0
 DAMAGE = 1
+
+[node name="MeshInstance3d" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jbwkp")

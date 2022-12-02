@@ -19,11 +19,11 @@ void vertex() {
 }
 
 void fragment() {
-	ALBEDO = texture(texturemap, UV * texture_scale).rgb;
+    ALBEDO = texture(texturemap, UV * texture_scale).rgb;
 	if (ALBEDO.r > 0.9 && ALBEDO.g > 0.9 && ALBEDO.b > 0.9) {
-		ALPHA = 0.9;
+		ALPHA = 1.0;
 	} else {
-		ALPHA = 0.5;
+		ALPHA = 0.7;
 	}
 	METALLIC = 0.5;
 	ROUGHNESS = 0.2;

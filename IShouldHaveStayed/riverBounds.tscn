@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjq762cmne23b"]
+[gd_scene load_steps=4 format=3 uid="uid://bjq762cmne23b"]
 
 [ext_resource type="Material" uid="uid://brh75fj3pigcw" path="res://blue.tres" id="1_40jyl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8b5y1"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7rb6"]
-albedo_color = Color(0.266667, 1, 1, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_o1rax"]
 
@@ -22,7 +19,7 @@ surface_material_override/0 = ExtResource("1_40jyl")
 [node name="Left3" type="MeshInstance3D" parent="."]
 transform = Transform3D(14.4959, 361.528, 0, -18.7434, 279.602, 0, 0, 0, 167.708, 0, 0, 0)
 mesh = SubResource("BoxMesh_8b5y1")
-surface_material_override/0 = SubResource("StandardMaterial3D_u7rb6")
+surface_material_override/0 = ExtResource("1_40jyl")
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="."]
 transform = Transform3D(26.1017, 221.323, 0, -19.9612, 289.404, 0, 0, 0, 12.7599, 0, 17.3962, 0)

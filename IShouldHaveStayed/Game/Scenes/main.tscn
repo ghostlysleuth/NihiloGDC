@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dyvln4jv11eda"]
+[gd_scene load_steps=11 format=3 uid="uid://dyvln4jv11eda"]
 
 [ext_resource type="Script" path="res://Game/Scenes/Game.gd" id="1_2meow"]
 [ext_resource type="PackedScene" uid="uid://f3yhyey6hoiq" path="res://walkway.tscn" id="2_sd67o"]
 [ext_resource type="PackedScene" uid="uid://btbm75xqtg1nc" path="res://player.tscn" id="3_anjao"]
 [ext_resource type="PackedScene" uid="uid://n7jfj411n6tc" path="res://river.tscn" id="3_u18g8"]
 [ext_resource type="PackedScene" uid="uid://damxxfhxmtny" path="res://Game/Scenes/Spawner.tscn" id="5_faq1c"]
-[ext_resource type="PackedScene" uid="uid://bjq762cmne23b" path="res://riverBounds.tscn" id="5_p3w4f"]
 [ext_resource type="PackedScene" uid="uid://b0iglugb44f88" path="res://water.tscn" id="6_4l4ek"]
 
 [sub_resource type="TextMesh" id="TextMesh_g67yv"]
@@ -50,10 +49,6 @@ current = true
 [node name="player" parent="." instance=ExtResource("3_anjao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.426, -11, 1.571)
 
-[node name="River" parent="." instance=ExtResource("5_p3w4f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -31.4748, 0)
-visible = false
-
 [node name="StaticBody3d" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3d" type="CollisionShape3D" parent="StaticBody3d"]
@@ -65,14 +60,15 @@ range = Vector3(20, 0, 0)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 17.0
+offset_right = 82.0
+offset_bottom = 26.0
 text = "Score : 0"
 label_settings = SubResource("LabelSettings_yjqqo")
 
 [node name="LifeLabel" type="Label" parent="CanvasLayer"]
-offset_left = 896.0
-offset_right = 953.0
+offset_left = 889.0
+offset_right = 946.0
 offset_bottom = 26.0
 text = "Lives: 3"
 label_settings = SubResource("LabelSettings_8fpna")

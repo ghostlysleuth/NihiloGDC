@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfa3ecm86ifow"]
+[gd_scene load_steps=3 format=3 uid="uid://bfa3ecm86ifow"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0qpqo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_32lx4"]
+albedo_color = Color(0.0106667, 0.64, 0, 1)
 
 [node name="wall_A" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
@@ -9,8 +12,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
 transform = Transform3D(0.3, 0, 0, 0, 5, 0, 0, 0, 5, 0, -3, 0)
 mesh = SubResource("BoxMesh_0qpqo")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_32lx4")
 
 [node name="basic wall2" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2, 0)
 mesh = SubResource("BoxMesh_0qpqo")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_32lx4")

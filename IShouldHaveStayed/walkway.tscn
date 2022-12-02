@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://f3yhyey6hoiq"]
+[gd_scene load_steps=7 format=3 uid="uid://f3yhyey6hoiq"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_jar5n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tleje"]
+albedo_color = Color(0.61, 0.437167, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_bjobx"]
 
@@ -26,6 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -33,6 +37,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -40,6 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC2" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
@@ -49,6 +55,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC2/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -56,6 +63,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC2/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -63,6 +71,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC2/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC3" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27194, 0, 0)
@@ -72,6 +81,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.27194, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC3/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -79,6 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC3/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -86,6 +97,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC3/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC4" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27194, 0, 0)
@@ -95,6 +107,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.27194, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC4/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -102,6 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC4/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -109,6 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC4/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC5" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2719, 0, 0)
@@ -118,6 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2719, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC5/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -125,6 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC5/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC5"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -132,6 +149,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC5/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC6" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2719, 0, 0)
@@ -141,6 +159,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2719, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC6/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -148,6 +167,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC6/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -155,6 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC6/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC7" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72806, 0, 0)
@@ -164,6 +185,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.72806, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC7/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -171,6 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC7/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -178,6 +201,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC7/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC8" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72806, 0, 0)
@@ -187,6 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72806, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC8/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -194,6 +219,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC8/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -201,6 +227,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC8/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC9" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.098, 0, 0)
@@ -210,6 +237,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.098, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC9/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -217,6 +245,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC9/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -224,6 +253,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC9/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC11" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.098, 0, 0)
@@ -233,6 +263,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.098, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC11/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -240,6 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC11/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -247,6 +279,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC11/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setC10" type="Node3D" parent="decore/planks"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.098, 0, 0)
@@ -256,6 +289,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.098, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC10/plankB"]
 transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankC" type="Node3D" parent="decore/planks/setC10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
@@ -263,6 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC10/plankC"]
 transform = Transform3D(1.2, 0, 0, 0, 0.5, 0, 0, 0, 5.2, -0.183611, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="plankA" type="Node3D" parent="decore/planks/setC10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
@@ -270,6 +305,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/planks/setC10/plankA"]
 transform = Transform3D(0.8, 0, 0, 0, 0.5, 0, 0, 0, 5.5, 0, 0, 0)
 mesh = SubResource("BoxMesh_jar5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="struts" type="Node3D" parent="decore"]
 
@@ -279,6 +315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.512, -1.43051e-06, -2.455
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/postA"]
 transform = Transform3D(0.5, 0, 0, 0, 6, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="postA2" type="Node3D" parent="decore/struts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6833, 4.76837e-07, 2.36858)
@@ -286,6 +323,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6833, 4.76837e-07, 2.3685
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/postA2"]
 transform = Transform3D(0.5, 0, 0, 0, 6, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setD" type="Node3D" parent="decore/struts"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
@@ -296,6 +334,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD/postB"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="postB2" type="Node3D" parent="decore/struts/setD"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
@@ -303,6 +342,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD/postB2"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setD2" type="Node3D" parent="decore/struts"]
 transform = Transform3D(0.989257, 0, -0.146187, 0, 1, 0, 0.146187, 0, 0.989257, -6, -1.90917, 0)
@@ -313,6 +353,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD2/postB"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="postB2" type="Node3D" parent="decore/struts/setD2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
@@ -320,6 +361,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD2/postB2"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setD3" type="Node3D" parent="decore/struts"]
 transform = Transform3D(0.99825, 0, 0.0591321, -0.00645702, 0.99402, 0.109005, -0.0587785, -0.109197, 0.992281, 6, -1.90917, 0)
@@ -330,6 +372,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD3/postB"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="postB2" type="Node3D" parent="decore/struts/setD3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
@@ -337,6 +380,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD3/postB2"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="setD4" type="Node3D" parent="decore/struts"]
 transform = Transform3D(0.99825, -8.77593e-12, 0.0591322, -0.00144679, 0.999701, 0.0244243, -0.0591145, -0.0244671, 0.997952, 14, -1.70502, 0.0169916)
@@ -347,6 +391,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, 2.5445)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD4/postB"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="postB2" type="Node3D" parent="decore/struts/setD4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
@@ -354,6 +399,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.512043, -1, -2.4555)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="decore/struts/setD4/postB2"]
 transform = Transform3D(0.5, 0, 0, 0, 5, 0, 0, 0, 0.5, 0, 0, 0)
 mesh = SubResource("CylinderMesh_bjobx")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="walkway" type="StaticBody3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 0.5, 0, 0, 0, 5, 0, 0, 4)
@@ -383,6 +429,7 @@ shape = SubResource("BoxShape3D_e3v28")
 [node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/railing/railing - front"]
 visible = false
 mesh = SubResource("BoxMesh_tqxjm")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")
 
 [node name="railing - back" type="StaticBody3D" parent="walkway/railing"]
 transform = Transform3D(20, 0, 0, 0, 0.3, 0, 0, 0, 0.1, 0, -0.995816, 5)
@@ -393,3 +440,4 @@ shape = SubResource("BoxShape3D_e3v28")
 [node name="MeshInstance3d" type="MeshInstance3D" parent="walkway/railing/railing - back"]
 visible = false
 mesh = SubResource("BoxMesh_tqxjm")
+surface_material_override/0 = SubResource("StandardMaterial3D_tleje")

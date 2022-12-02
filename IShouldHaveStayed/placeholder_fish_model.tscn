@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cog5xfgjg3ytr"]
+[gd_scene load_steps=6 format=3 uid="uid://cog5xfgjg3ytr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4bxjd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q265u"]
+albedo_color = Color(1, 0, 1, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_xme62"]
 
@@ -14,31 +17,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03153, -3.45415, -29.1604)
 [node name="MeshInstance3d" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_4bxjd")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
 
 [node name="MeshInstance3d6" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, -0.447492, 0.0604826, 0.721568)
 mesh = SubResource("SphereMesh_xme62")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
 
 [node name="MeshInstance3d7" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, -8.74228e-09, -0.2, 0, 0.2, -8.74228e-09, 0.408742, 0.0604826, 0.721568)
 mesh = SubResource("SphereMesh_xme62")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
 
 [node name="MeshInstance3d8" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.15, -0.259808, 0, 0.259808, 0.15, -0.01053, 0.0604826, 0.83279)
 mesh = SubResource("TorusMesh_6oino")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
 
 [node name="MeshInstance3d2" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, -1)
 mesh = SubResource("PrismMesh_2pvhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
 
 [node name="MeshInstance3d4" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.91956, 0, 0, 0, -4.37114e-08, -0.108375, 0, 1, -4.73721e-09, 0, 0, 0)
 mesh = SubResource("PrismMesh_2pvhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
 
 [node name="MeshInstance3d3" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0, -1)
 mesh = SubResource("PrismMesh_2pvhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
 
 [node name="MeshInstance3d5" type="MeshInstance3D" parent="."]
 transform = Transform3D(0, -4.37114e-08, -0.108375, -1, -1.06758e-18, 5.05735e-27, -1.77742e-15, 1, -4.73721e-09, 0, 0.269439, 0)
 mesh = SubResource("PrismMesh_2pvhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_q265u")
